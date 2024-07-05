@@ -8,14 +8,26 @@ html {
   block-size: 100%;
 }
 
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 .page {
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
   color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  /* Добавил flex чтобы расположить блок .content посередине .page */
+  display: flex;
 }
 
 h1,
@@ -35,4 +47,229 @@ fieldset {
 ul,
 ol {
   list-style: none;
+}
+
+.content {
+  padding: 133px 30px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  object-position: center;
+  column-gap: 30px;
+}
+
+.search-form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content__list {
+  position: relative;
+  height: 298px;
+  overflow: auto;
+  appearance: none;
+  display: flex;
+  flex-direction: column;
+  /* В уроке не нашел, как сделать кастомный скролл, поэтому постарался сделать как в гифке */
+  scrollbar-width: thin;
+  scrollbar-color: rgb(0 0 0/0.8) transparent;
+}
+
+.content__details {
+  display: flex;
+  flex-direction: column;
+  row-gap: 26px;
+  width: 100%;
+  height: 100%;
+}
+
+.result__video-container {
+  position: relative;
+  width: 711px;
+  /* height: 386px; */
+  margin-bottom: 16px;
+}
+
+.result__video {
+  width: 100%;
+}
+
+.content__list-item:not(:last-child) {
+  padding-bottom: 30px;
+}
+
+.content__list-item:focus {
+  outline: 1px solid white;
+}
+
+.content__video-card {
+  display: flex;
+  align-items: flex-start;
+}
+
+.content__video-card-thumbnail {
+  width: 194px;
+  height: 103px;
+}
+
+.content__video-card-description-container {
+  width: 100%;
+  height: 100%;
+}
+
+.search-form__fieldset-title {
+  font-weight: normal;
+  padding-bottom: 5px;
+  font-size: 18px;
+}
+
+.title {
+  font-family: "Oswald", "sans-serif";
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 75px;
+  line-height: 94%;
+}
+
+.content__accent {
+  color: #545050;
+}
+
+.content__card-link {
+  display: block;
+  text-decoration: none;
+  color: white;
+  /* чтобы обводку было видно со всех сторон при focus */
+  margin: 2px;
+}
+
+.content__card-link:focus {
+  outline: none;
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid white;
+}
+.content__card-link:active {
+  background-color: #545050;
+}
+.content__card-link:hover {
+  text-decoration: underline;
+}
+
+.content__card-link_current {
+  background-color: #545050;
+}
+
+.content__card-link_current:active {
+  background-color: #545050;
+}
+
+.content__video-card-title {
+  font-family: "Oswald", "sans-serif";
+  text-transform: uppercase;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.content__video-card-description {
+  line-height: 16.2px;
+}
+
+fieldset {
+  border: none;
+}
+
+.search-form__label {
+  display: flex;
+  width: fit-content;
+}
+
+.search-form__label:has(:focus-visible) {
+  outline-offset: 2px;
+  outline: 1px solid white;
+}
+
+.search-form__textfield {
+  appearance: none;
+  background-color: transparent;
+  border-top: 2px solid white;
+  border-left: 1px solid transparent;
+  border-bottom: 2px solid white;
+  border-right: 1px solid transparent;
+  font-family: inherit;
+  width: 225px;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.search-form__pseudo-checkbox {
+  display: block;
+  cursor: pointer;
+  width: 19px;
+  height: 19px;
+  margin-right: 5px;
+  border: 1px solid white;
+  padding: 1px;
+  background-color: transparent;
+}
+
+input[type="checkbox"]:checked + .search-form__pseudo-checkbox::before {
+  display: block;
+  content: "";
+  /* width: 15px;
+  height: 15px; */
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  /* margin: 1px 1px; */
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  flex-direction: row;
+  column-gap: 15px;
+}
+
+.button {
+  cursor: pointer;
+  width: 194px;
+  height: 34px;
+  align-self: flex-end;
+  font-family: "Fira Sans Condensed", sans-serif;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border: 1px solid white;
+  background-color: transparent;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: 1px solid white;
+  outline-offset: 1px;
+}
+
+.button:hover {
+  text-decoration: underline;
+}
+
+.button:active {
+  background-color: #545050;
+}
+
+.search-form__submit-button {
+  border: 1px solid white;
+}
+
+.more-button {
+  width: 399px;
+  height: 34px;
+  /* добавил марджины, чтобы работал outline */
+  margin-left: 2px;
+  margin-right: 2px;
 }
