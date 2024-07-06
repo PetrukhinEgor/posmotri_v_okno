@@ -55,7 +55,7 @@ ol {
   flex-direction: row;
   align-items: end;
   object-position: center;
-  column-gap: 30px;
+  column-gap: 27px;
 }
 
 .search-form {
@@ -80,9 +80,8 @@ ol {
 .content__details {
   display: flex;
   flex-direction: column;
-  row-gap: 26px;
-  /* width: 100%; */
-  width:399px;
+  row-gap: 19px;
+  width:400px;
   height: 100%;
 }
 
@@ -97,10 +96,11 @@ ol {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center
 }
 
 .content__list-item:not(:last-child) {
-  padding-bottom: 30px;
+  padding-bottom: 24px;
 }
 
 .content__list-item:focus {
@@ -115,12 +115,13 @@ ol {
 .content__video-card-thumbnail {
   /* width: 194px; */
   height: 103px;
+  align-self: center;
 }
 
 .content__video-card-description-container {
   width: 100%;
   height: 100%;
-  padding: 2px;
+  padding-left:1px;
 }
 
 .search-form__fieldset-title {
@@ -146,7 +147,7 @@ ol {
   text-decoration: none;
   color: white;
   /* чтобы обводку было видно со всех сторон при focus */
-  margin: 2px;
+  margin: 1px;
 }
 
 .content__card-link:focus {
@@ -179,7 +180,7 @@ ol {
 }
 
 .content__video-card-description {
-  line-height: 16.2px;
+  line-height: 17px;
 }
 
 fieldset {
